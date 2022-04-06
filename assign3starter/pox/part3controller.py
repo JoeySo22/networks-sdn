@@ -43,22 +43,27 @@ class Part3Controller (object):
 
   def s1_setup(self):
     #put switch 1 rules here
+    # Send here connection.send()
     pass
 
   def s2_setup(self):
     #put switch 2 rules here
+    # Send here connection.send()
     pass
 
   def s3_setup(self):
     #put switch 3 rules here
+    # Send here connection.send()
     pass
 
   def cores21_setup(self):
     #put core switch rules here
+    # Send here connection.send()
     pass
 
   def dcs31_setup(self):
     #put datacenter switch rules here
+    # Send here connection.send()
     pass
 
   #used in part 4 to handle individual ARP packets

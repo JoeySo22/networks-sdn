@@ -10,11 +10,11 @@ from mininet.node import RemoteController
 class part3_topo(Topo):
   def build(self):
     #add switches
-    s1 = self.addSwitch('s1')
-    s2 = self.addSwitch('s2')
-    s3 = self.addSwitch('s3')
-    cores21 = self.addSwitch('cores21')
-    dcs31 = self.addSwitch('dcs31')
+    s1 = self.addSwitch('s1', protocols = 'OpenFlow10')
+    s2 = self.addSwitch('s2', protocols = 'OpenFlow10')
+    s3 = self.addSwitch('s3', protocols = 'OpenFlow10')
+    cores21 = self.addSwitch('cores21', protocols = 'OpenFlow10')
+    dcs31 = self.addSwitch('dcs31', protocols = 'OpenFlow10')
     #add hosts
     h10 = self.addHost('h10',mac='00:00:00:00:00:01',ip='10.0.1.10/24',defaultRoute='h10-eth0')
     h20 = self.addHost('h20',mac='00:00:00:00:00:02',ip='10.0.2.20/24',defaultRoute='h20-eth0')
