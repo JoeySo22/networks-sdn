@@ -31,9 +31,14 @@ class Firewall (object):
     second_rule.actions.append(of.ofp_action_output(port = of.OFPP_FLOOD)) 
     second_rule.nw_proto = 1
     self.connection.send(second_rule)
+    
     # Create an action that takes an ipv4 src & dest, and any protocol, and drop
     # It seems that by exclusivity we will drop the other protocols
-
+    third_rule = of.ofp_flow_mod()
+    third_rule.priority = 1000
+    third_rule.match.dl_type = 0x0800 # ip protocol value
+    third_rule.actions.append(of.ofp_action_output(port = of.OFPP_NONE) 
+    self.connection.send(third_rule)
   def _handle_PacketIn (self, event):
     """
     Packets not handled by the router rules will be

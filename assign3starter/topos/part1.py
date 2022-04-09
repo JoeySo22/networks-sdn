@@ -9,7 +9,7 @@ class part1_topo(Topo):
     
     def build(self):
         # Create Switch
-        s1 = self.addSwitch('s1')
+        s1 = self.addSwitch('s1', protocols = 'OpenFlow10' )
         # Create 4 hosts like in task 1
         h1 = self.addHost('h1')
         h2 = self.addHost('h2')
