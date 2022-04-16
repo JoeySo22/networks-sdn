@@ -34,7 +34,7 @@ class Firewall (object):
     # Create an action that takes an ipv4 src & dest, and any protocol, and drop
     third_rule = of.ofp_flow_mod()
     third_rule.priority = 1000
-    third_rule.match.dl_type = 0x0800
+    third_rule.match.dl_type = 0x0800 # IP
     third_rule.buffer_id = None
     self.connection.send(third_rule)
 
