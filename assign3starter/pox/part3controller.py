@@ -52,7 +52,7 @@ class Part3Controller (object):
     second_rule.priority = 2000
     second_rule.match.dl_type = 0x0800 # ip here
     second_rule.actions.append(of.ofp_action_output(port = of.OFPP_FLOOD)) 
-    second_rule.match.nw_proto = 1
+    second_rule.match.nw_proto = 1 # icmp
     self.connection.send(second_rule)
     #put switch 1 rules here
     # Send here connection.send()
@@ -105,7 +105,7 @@ class Part3Controller (object):
     second_rule.match.nw_dst = IPAddr("172.16.10.100")
     second_rule.match.nw_src = IPAddr("10.0.1.10")
     second_rule.actions.append(of.ofp_action_output(port = 1)) 
-    second_rule.match.nw_proto = 1
+    second_rule.match.nw_proto = 1 # icmp
     self.connection.send(second_rule)
     
     w_rule = of.ofp_flow_mod()
